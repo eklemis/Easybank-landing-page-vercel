@@ -33,7 +33,18 @@ a.request-invite {
 	text-decoration: none;
 	color: white;
 	border-radius: 35px;
-	background-image: linear-gradient(to right, #2fd264, #2ab8d4);
+	background: linear-gradient(to right, #2fd264, #2ab8d4);
+	transition: background 1s;
+	transition-timing-function: ease-in;
+}
+a.request-invite:hover {
+	background: linear-gradient(
+			to right,
+			rgba(190, 206, 196, 0.5),
+			rgba(190, 206, 196, 0.2)
+		),
+		linear-gradient(to right, #2fd264, #2ab8d4);
+	background-position-x: 170px;
 }
 header {
 	display: flex;
@@ -177,7 +188,7 @@ img.article-card-image {
 div.snapshot {
 	padding: 25px 20px;
 }
-h1.article-writer {
+h3.article-writer {
 	font-size: 16px;
 	color: #7c8094;
 	font-weight: 400;
@@ -189,6 +200,12 @@ h2.article-title {
 	font-size: 20px;
 	line-height: 1.5;
 	margin-bottom: 10px;
+}
+h2.article-title:hover {
+	color: #34c78b;
+}
+div.snapshot a {
+	text-decoration: none;
 }
 p.article-short {
 	color: #7c8094;
@@ -224,6 +241,9 @@ div.keep-in-touch img {
 	width: 30px;
 	height: 30px;
 }
+div.keep-in-touch a svg path:hover {
+	fill: #34c78b;
+}
 div.bottom-link {
 	display: flex;
 	flex-direction: column;
@@ -242,6 +262,9 @@ div.bottom-link a {
 
 	text-decoration: none;
 	color: #afb2c4;
+}
+div.bottom-link a:hover {
+	color: #34c78b;
 }
 h2.copyright {
 	color: #afb2c4;
@@ -275,10 +298,13 @@ h2.copyright {
 		width: 580px;
 		justify-content: space-evenly;
 	}
-	div.top-menu a:hover {
+	div.top-menu a {
 		padding: 10px 10px;
 		border-width: 0px 0px 3px 0px;
 		border-style: solid;
+		border-color: transparent;
+	}
+	div.top-menu a:hover {
 		border-image: linear-gradient(to right, #2fd264, #2ab8d4) 10 10%;
 	}
 	div.top-menu.hide {
@@ -324,6 +350,7 @@ h2.copyright {
 		align-items: flex-start;
 	}
 	h1.hero-title,
+	h2.card-title,
 	p.hero-desc {
 		text-align: left;
 	}
